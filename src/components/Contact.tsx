@@ -24,124 +24,108 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="section-padding">
-      <div className="container">
-        <div className="row">
-          <div className="col-12 text-center mb-5">
-            <h2 className="section-title pixel-text">Get In Touch</h2>
-            <p className="section-description">
-              Have a project in mind or want to collaborate? Let's talk!
-            </p>
-          </div>
+    <section id="contact" className="py-24 px-4">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold pixel-text text-gradient mb-4">Get In Touch</h2>
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            Have a project in mind or want to collaborate? Let's talk!
+          </p>
         </div>
         
-        <div className="row justify-content-center">
-          <div className="col-lg-10">
-            <div className="contact-container pixel-card">
-              <div className="row g-4">
-                <div className="col-lg-5">
-                  <div className="contact-info h-100 d-flex flex-column">
-                    <div className="contact-item d-flex align-items-center mb-4">
-                      <div className="contact-icon">
-                        <i className="fas fa-envelope"></i>
-                      </div>
-                      <div className="contact-details">
-                        <h4>Email</h4>
-                        <a href="mailto:soham.chaudhary404@gmail.com">
-                          soham.chaudhary404@gmail.com
-                        </a>
-                      </div>
-                    </div>
-                    
-                    <div className="contact-item d-flex align-items-center mb-4">
-                      <div className="contact-icon">
-                        <i className="fas fa-phone"></i>
-                      </div>
-                      <div className="contact-details">
-                        <h4>Phone</h4>
-                        <a href="tel:+918806649733">+91 8806649733</a>
-                      </div>
-                    </div>
-                    
-                    <div className="contact-item d-flex align-items-center mb-4">
-                      <div className="contact-icon">
-                        <i className="fas fa-map-marker-alt"></i>
-                      </div>
-                      <div className="contact-details">
-                        <h4>Location</h4>
-                        <p>Pune, Maharashtra, India</p>
-                      </div>
-                    </div>
-                    
-                    <div className="social-links mt-auto pt-4">
-                      <a href="https://github.com/SohamDev404" className="social-link me-3">
-                        <i className="fab fa-github"></i>
-                      </a>
-                      <a href="https://linkedin.com/in/soham-chaudhary14" className="social-link">
-                        <i className="fab fa-linkedin"></i>
-                      </a>
-                    </div>
+        <div className="max-w-6xl mx-auto">
+          <div className="pixel-card p-8">
+            <div className="grid lg:grid-cols-2 gap-12">
+              <div className="space-y-8">
+                <div className="flex items-center gap-6">
+                  <div className="w-16 h-16 border-2 border-primary flex items-center justify-center text-2xl text-primary flex-shrink-0">
+                    <i className="fas fa-envelope"></i>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-primary mb-2">Email</h4>
+                    <a href="mailto:soham.chaudhary404@gmail.com" className="text-gray-300 hover:text-primary transition-colors">
+                      soham.chaudhary404@gmail.com
+                    </a>
                   </div>
                 </div>
                 
-                <div className="col-lg-7">
-                  <form onSubmit={handleSubmit} className="contact-form">
-                    <div className="row">
-                      <div className="col-md-6 mb-3">
-                        <input
-                          type="text"
-                          className="form-control pixel-input"
-                          name="name"
-                          placeholder="Your Name"
-                          value={formData.name}
-                          onChange={handleChange}
-                          required
-                        />
-                      </div>
-                      <div className="col-md-6 mb-3">
-                        <input
-                          type="email"
-                          className="form-control pixel-input"
-                          name="email"
-                          placeholder="Your Email"
-                          value={formData.email}
-                          onChange={handleChange}
-                          required
-                        />
-                      </div>
-                    </div>
-                    
-                    <div className="mb-3">
-                      <input
-                        type="text"
-                        className="form-control pixel-input"
-                        name="subject"
-                        placeholder="Subject"
-                        value={formData.subject}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                    
-                    <div className="mb-3">
-                      <textarea
-                        className="form-control pixel-input"
-                        name="message"
-                        rows={6}
-                        placeholder="Your Message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        required
-                      ></textarea>
-                    </div>
-                    
-                    <button type="submit" className="btn btn-primary pixel-btn w-100">
-                      <i className="fas fa-paper-plane me-2"></i>
-                      Send Message
-                    </button>
-                  </form>
+                <div className="flex items-center gap-6">
+                  <div className="w-16 h-16 border-2 border-primary flex items-center justify-center text-2xl text-primary flex-shrink-0">
+                    <i className="fas fa-phone"></i>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-primary mb-2">Phone</h4>
+                    <a href="tel:+918806649733" className="text-gray-300 hover:text-primary transition-colors">+91 8806649733</a>
+                  </div>
+                </div>
+                
+                <div className="flex items-center gap-6">
+                  <div className="w-16 h-16 border-2 border-primary flex items-center justify-center text-2xl text-primary flex-shrink-0">
+                    <i className="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-primary mb-2">Location</h4>
+                    <p className="text-gray-300">Pune, Maharashtra, India</p>
+                  </div>
+                </div>
+                
+                <div className="flex gap-4 pt-8">
+                  <a href="https://github.com/SohamDev404" className="social-link">
+                    <i className="fab fa-github"></i>
+                  </a>
+                  <a href="https://linkedin.com/in/soham-chaudhary14" className="social-link">
+                    <i className="fab fa-linkedin"></i>
+                  </a>
                 </div>
               </div>
+              
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="pixel-input w-full"
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Your Email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="pixel-input w-full"
+                  />
+                </div>
+                
+                <input
+                  type="text"
+                  name="subject"
+                  placeholder="Subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                  className="pixel-input w-full"
+                />
+                
+                <textarea
+                  name="message"
+                  rows={6}
+                  placeholder="Your Message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  className="pixel-input w-full resize-none"
+                ></textarea>
+                
+                <button type="submit" className="pixel-btn bg-gradient-to-r from-primary to-secondary w-full py-4 text-white font-semibold">
+                  <i className="fas fa-paper-plane mr-2"></i>
+                  Send Message
+                </button>
+              </form>
             </div>
           </div>
         </div>

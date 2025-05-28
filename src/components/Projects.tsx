@@ -30,45 +30,43 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="section-padding bg-dark">
-      <div className="container">
-        <div className="row">
-          <div className="col-12 text-center mb-5">
-            <h2 className="section-title pixel-text">Featured Projects</h2>
-            <p className="section-description">
-              Some of my recent work and side projects
-            </p>
-          </div>
+    <section id="projects" className="py-24 px-4 bg-darker-bg">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold pixel-text text-gradient mb-4">Featured Projects</h2>
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            Some of my recent work and side projects
+          </p>
         </div>
         
-        <div className="row">
+        <div className="grid lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div key={index} className="col-lg-4 col-md-6 mb-4">
-              <div className="project-card pixel-card">
-                <div className="project-image">
-                  <div className="project-emoji">{project.image}</div>
-                </div>
+            <div key={index} className="pixel-card flex flex-col h-full">
+              <div className="text-center p-8 border-b border-primary">
+                <div className="text-6xl mb-4 animate-bounce">{project.image}</div>
+              </div>
+              
+              <div className="p-8 flex-1 flex flex-col">
+                <h3 className="text-xl font-bold text-primary mb-4">{project.title}</h3>
+                <p className="text-gray-400 mb-6 flex-1 leading-relaxed">{project.description}</p>
                 
-                <div className="project-content">
-                  <h3 className="project-title">{project.title}</h3>
-                  <p className="project-description">{project.description}</p>
-                  
-                  <div className="project-technologies">
+                <div className="mb-6">
+                  <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech, techIndex) => (
-                      <span key={techIndex} className="tech-badge pixel-badge">
+                      <span key={techIndex} className="bg-primary/10 border border-primary/30 px-3 py-1 text-sm pixel-text text-primary">
                         {tech}
                       </span>
                     ))}
                   </div>
-                  
-                  <div className="project-links">
-                    <a href={project.github} className="btn btn-outline-primary btn-sm pixel-btn me-2">
-                      <i className="fab fa-github"></i> Code
-                    </a>
-                    <a href={project.demo} className="btn btn-primary btn-sm pixel-btn">
-                      <i className="fas fa-external-link-alt"></i> Demo
-                    </a>
-                  </div>
+                </div>
+                
+                <div className="flex gap-4 mt-auto">
+                  <a href={project.github} className="flex-1 text-center py-3 border-2 border-primary text-primary hover:bg-primary hover:text-white transition-colors font-semibold">
+                    <i className="fab fa-github mr-2"></i> Code
+                  </a>
+                  <a href={project.demo} className="flex-1 text-center py-3 bg-gradient-to-r from-primary to-secondary text-white font-semibold hover:opacity-90 transition-opacity">
+                    <i className="fas fa-external-link-alt mr-2"></i> Demo
+                  </a>
                 </div>
               </div>
             </div>
