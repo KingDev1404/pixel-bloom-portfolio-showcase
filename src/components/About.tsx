@@ -27,28 +27,22 @@ const About = () => {
               </div>
               
               <div className="about-stats row mt-5">
-                <div className="col-6 col-md-3">
+                <div className="col-md-4 mb-3">
                   <div className="stat-item pixel-card">
                     <h3 className="stat-number text-gradient">2+</h3>
                     <p className="stat-label">Years Experience</p>
                   </div>
                 </div>
-                <div className="col-6 col-md-3">
+                <div className="col-md-4 mb-3">
                   <div className="stat-item pixel-card">
                     <h3 className="stat-number text-gradient">15+</h3>
                     <p className="stat-label">Technologies</p>
                   </div>
                 </div>
-                <div className="col-6 col-md-3">
+                <div className="col-md-4 mb-3">
                   <div className="stat-item pixel-card">
                     <h3 className="stat-number text-gradient">5+</h3>
                     <p className="stat-label">Projects</p>
-                  </div>
-                </div>
-                <div className="col-6 col-md-3">
-                  <div className="stat-item pixel-card">
-                    <h3 className="stat-number text-gradient">95%</h3>
-                    <p className="stat-label">Test Coverage</p>
                   </div>
                 </div>
               </div>

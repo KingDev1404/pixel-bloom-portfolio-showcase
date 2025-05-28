@@ -40,7 +40,7 @@ const Contact = () => {
             <div className="contact-container pixel-card">
               <div className="row g-4">
                 <div className="col-lg-5">
-                  <div className="contact-info h-100">
+                  <div className="contact-info h-100 d-flex flex-column">
                     <div className="contact-item">
                       <div className="contact-icon">
                         <i className="fas fa-envelope"></i>
@@ -73,7 +73,7 @@ const Contact = () => {
                       </div>
                     </div>
                     
-                    <div className="social-links mt-4">
+                    <div className="social-links mt-auto pt-4">
                       <a href="https://github.com/SohamDev404" className="social-link me-3">
                         <i className="fab fa-github"></i>
                       </a>
