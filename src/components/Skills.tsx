@@ -6,37 +6,46 @@ const Skills = () => {
     {
       title: "Frontend",
       skills: [
-        { name: "React.js", level: 90 },
-        { name: "Next.js", level: 85 },
-        { name: "JavaScript", level: 95 },
-        { name: "TypeScript", level: 80 },
-        { name: "Tailwind CSS", level: 90 },
-        { name: "Bootstrap", level: 85 }
+        { name: "React.js", level: "Expert" },
+        { name: "Next.js", level: "Advanced" },
+        { name: "JavaScript", level: "Expert" },
+        { name: "TypeScript", level: "Advanced" },
+        { name: "Tailwind CSS", level: "Expert" },
+        { name: "Bootstrap", level: "Advanced" }
       ]
     },
     {
       title: "Backend",
       skills: [
-        { name: "Node.js", level: 90 },
-        { name: "Express.js", level: 88 },
-        { name: "Python", level: 75 },
-        { name: "MongoDB", level: 85 },
-        { name: "PostgreSQL", level: 80 },
-        { name: "REST APIs", level: 92 }
+        { name: "Node.js", level: "Expert" },
+        { name: "Express.js", level: "Advanced" },
+        { name: "Python", level: "Intermediate" },
+        { name: "MongoDB", level: "Advanced" },
+        { name: "PostgreSQL", level: "Advanced" },
+        { name: "REST APIs", level: "Expert" }
       ]
     },
     {
       title: "DevOps/Tools",
       skills: [
-        { name: "Git/GitHub", level: 95 },
-        { name: "Docker", level: 80 },
-        { name: "CI/CD", level: 75 },
-        { name: "AWS", level: 70 },
-        { name: "Vercel", level: 90 },
-        { name: "Netlify", level: 85 }
+        { name: "Git/GitHub", level: "Expert" },
+        { name: "Docker", level: "Advanced" },
+        { name: "CI/CD", level: "Intermediate" },
+        { name: "AWS", level: "Intermediate" },
+        { name: "Vercel", level: "Expert" },
+        { name: "Netlify", level: "Advanced" }
       ]
     }
   ];
+
+  const getLevelColor = (level: string) => {
+    switch (level) {
+      case "Expert": return "skill-expert";
+      case "Advanced": return "skill-advanced";
+      case "Intermediate": return "skill-intermediate";
+      default: return "skill-beginner";
+    }
+  };
 
   return (
     <section id="skills" className="section-padding bg-dark">
@@ -55,22 +64,13 @@ const Skills = () => {
             <div key={index} className="col-lg-4 mb-4">
               <div className="skill-category pixel-card">
                 <h3 className="category-title text-gradient">{category.title}</h3>
-                <div className="skills-list">
+                <div className="skills-grid">
                   {category.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex} className="skill-item">
-                      <div className="skill-header">
-                        <span className="skill-name">{skill.name}</span>
-                        <span className="skill-percentage">{skill.level}%</span>
-                      </div>
-                      <div className="skill-bar">
-                        <div 
-                          className="skill-progress" 
-                          style={{
-                            width: `${skill.level}%`,
-                            animationDelay: `${skillIndex * 0.1}s`
-                          }}
-                        ></div>
-                      </div>
+                    <div key={skillIndex} className="skill-badge">
+                      <span className="skill-name">{skill.name}</span>
+                      <span className={`skill-level ${getLevelColor(skill.level)}`}>
+                        {skill.level}
+                      </span>
                     </div>
                   ))}
                 </div>

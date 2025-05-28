@@ -9,13 +9,24 @@ const About = () => {
           <div className="col-lg-6">
             <div className="about-content">
               <h2 className="section-title pixel-text">About Me</h2>
-              <p className="section-description">
-                I'm a passionate Full Stack Developer with practical experience in designing 
-                and deploying scalable web applications. Currently pursuing B.Tech in Electronics 
-                and Telecommunication while expanding my expertise in DevOps practices.
-              </p>
+              <div className="about-description">
+                <p className="lead mb-4">
+                  I'm a passionate Full Stack Developer with practical experience in designing 
+                  and deploying scalable web applications.
+                </p>
+                <p className="mb-4">
+                  Currently pursuing B.Tech in Electronics and Telecommunication while 
+                  expanding my expertise in DevOps practices. I love creating innovative 
+                  solutions and bringing ideas to life through code.
+                </p>
+                <p className="mb-4">
+                  My journey in technology is driven by curiosity and a desire to build 
+                  applications that make a difference. I'm always learning new technologies 
+                  and best practices to deliver high-quality software solutions.
+                </p>
+              </div>
               
-              <div className="about-stats row">
+              <div className="about-stats row mt-5">
                 <div className="col-6 col-md-3">
                   <div className="stat-item pixel-card">
                     <h3 className="stat-number text-gradient">2+</h3>
@@ -42,16 +53,17 @@ const About = () => {
                 </div>
               </div>
 
-              <div className="education-section">
+              <div className="education-section mt-5">
                 <h3 className="subsection-title">Education</h3>
-                <div className="education-item pixel-card">
-                  <h4>Bachelor of Technology - 2026</h4>
-                  <p>Pimpri Chinchwad College Of Engineering</p>
-                  <p>Electronics And Telecommunication Engineering</p>
+                <div className="education-item pixel-card mb-3">
+                  <h4 className="text-gradient">Bachelor of Technology - 2026</h4>
+                  <p className="mb-1"><strong>Pimpri Chinchwad College Of Engineering</strong></p>
+                  <p className="text-muted">Electronics And Telecommunication Engineering</p>
                 </div>
                 <div className="education-item pixel-card">
-                  <h4>Higher Secondary Certificate - 2022</h4>
-                  <p>Pratibha International School, Pune, CBSE</p>
+                  <h4 className="text-gradient">Higher Secondary Certificate - 2022</h4>
+                  <p className="mb-1"><strong>Pratibha International School, Pune</strong></p>
+                  <p className="text-muted">CBSE Board</p>
                 </div>
               </div>
             </div>

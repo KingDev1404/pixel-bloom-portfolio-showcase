@@ -7,7 +7,8 @@ const Header = () => {
   return (
     <nav className="navbar navbar-expand-lg fixed-top pixel-nav">
       <div className="container">
-        <a className="navbar-brand pixel-text" href="#home">
+        <a className="navbar-brand pixel-text d-flex align-items-center" href="#home">
+          <div className="pixel-character me-2">🎮</div>
           <span className="text-gradient">SOHAM.DEV</span>
         </a>
         

@@ -11,9 +11,7 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
     console.log('Form submitted:', formData);
-    // You can integrate with email service or backend here
     alert('Thank you for your message! I\'ll get back to you soon.');
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
@@ -37,12 +35,12 @@ const Contact = () => {
           </div>
         </div>
         
-        <div className="row">
-          <div className="col-lg-8 mx-auto">
+        <div className="row justify-content-center">
+          <div className="col-lg-10">
             <div className="contact-container pixel-card">
-              <div className="row">
-                <div className="col-md-6">
-                  <div className="contact-info">
+              <div className="row g-4">
+                <div className="col-lg-5">
+                  <div className="contact-info h-100">
                     <div className="contact-item">
                       <div className="contact-icon">
                         <i className="fas fa-envelope"></i>
@@ -75,8 +73,8 @@ const Contact = () => {
                       </div>
                     </div>
                     
-                    <div className="social-links">
-                      <a href="https://github.com/SohamDev404" className="social-link">
+                    <div className="social-links mt-4">
+                      <a href="https://github.com/SohamDev404" className="social-link me-3">
                         <i className="fab fa-github"></i>
                       </a>
                       <a href="https://linkedin.com/in/soham-chaudhary14" className="social-link">
@@ -86,30 +84,31 @@ const Contact = () => {
                   </div>
                 </div>
                 
-                <div className="col-md-6">
+                <div className="col-lg-7">
                   <form onSubmit={handleSubmit} className="contact-form">
-                    <div className="mb-3">
-                      <input
-                        type="text"
-                        className="form-control pixel-input"
-                        name="name"
-                        placeholder="Your Name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                    
-                    <div className="mb-3">
-                      <input
-                        type="email"
-                        className="form-control pixel-input"
-                        name="email"
-                        placeholder="Your Email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                      />
+                    <div className="row">
+                      <div className="col-md-6 mb-3">
+                        <input
+                          type="text"
+                          className="form-control pixel-input"
+                          name="name"
+                          placeholder="Your Name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          required
+                        />
+                      </div>
+                      <div className="col-md-6 mb-3">
+                        <input
+                          type="email"
+                          className="form-control pixel-input"
+                          name="email"
+                          placeholder="Your Email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          required
+                        />
+                      </div>
                     </div>
                     
                     <div className="mb-3">
@@ -128,7 +127,7 @@ const Contact = () => {
                       <textarea
                         className="form-control pixel-input"
                         name="message"
-                        rows={5}
+                        rows={6}
                         placeholder="Your Message"
                         value={formData.message}
                         onChange={handleChange}
