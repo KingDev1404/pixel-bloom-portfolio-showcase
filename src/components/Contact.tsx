@@ -41,7 +41,7 @@ const Contact = () => {
               <div className="row g-4">
                 <div className="col-lg-5">
                   <div className="contact-info h-100 d-flex flex-column">
-                    <div className="contact-item">
+                    <div className="contact-item d-flex align-items-center mb-4">
                       <div className="contact-icon">
                         <i className="fas fa-envelope"></i>
                       </div>
@@ -53,7 +53,7 @@ const Contact = () => {
                       </div>
                     </div>
                     
-                    <div className="contact-item">
+                    <div className="contact-item d-flex align-items-center mb-4">
                       <div className="contact-icon">
                         <i className="fas fa-phone"></i>
                       </div>
@@ -63,7 +63,7 @@ const Contact = () => {
                       </div>
                     </div>
                     
-                    <div className="contact-item">
+                    <div className="contact-item d-flex align-items-center mb-4">
                       <div className="contact-icon">
                         <i className="fas fa-map-marker-alt"></i>
                       </div>

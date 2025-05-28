@@ -26,20 +26,14 @@ const About = () => {
                 </p>
               </div>
               
-              <div className="about-stats row mt-5">
-                <div className="col-md-4 mb-3">
-                  <div className="stat-item pixel-card">
-                    <h3 className="stat-number text-gradient">2+</h3>
-                    <p className="stat-label">Years Experience</p>
-                  </div>
-                </div>
-                <div className="col-md-4 mb-3">
+              <div className="about-stats row mt-5 justify-content-center">
+                <div className="col-md-5 mb-3">
                   <div className="stat-item pixel-card">
                     <h3 className="stat-number text-gradient">15+</h3>
                     <p className="stat-label">Technologies</p>
                   </div>
                 </div>
-                <div className="col-md-4 mb-3">
+                <div className="col-md-5 mb-3">
                   <div className="stat-item pixel-card">
                     <h3 className="stat-number text-gradient">5+</h3>
                     <p className="stat-label">Projects</p>
