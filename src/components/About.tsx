@@ -68,13 +68,13 @@ const About = () => {
                   </div>
                   <div className="code-line" style={{animationDelay: '0.5s'}}>
                     <span className="code-keyword">function</span> 
-                    <span className="code-function"> createAwesome</span>() {
+                    <span className="code-function"> createAwesome</span>() {'{'}
                   </div>
                   <div className="code-line" style={{animationDelay: '1s'}}>
                     &nbsp;&nbsp;<span className="code-keyword">return</span> 
                     <span className="code-string"> 'Amazing Projects'</span>;
                   </div>
-                  <div className="code-line" style={{animationDelay: '1.5s'}}>};</div>
+                  <div className="code-line" style={{animationDelay: '1.5s'}}>{'}'}</div>
                 </div>
               </div>
             </div>
