@@ -10,7 +10,6 @@ import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import PixelElements from '../components/PixelElements';
-import NFTShowcase from '../components/NFTShowcase';
 
 const Index = () => {
   const mountRef = useRef<HTMLDivElement>(null);
@@ -109,7 +108,6 @@ const Index = () => {
       <Header />
       <Hero />
       <About />
-      <NFTShowcase />
       <Skills />
       <Experience />
       <Projects />
