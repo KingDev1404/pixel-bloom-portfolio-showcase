@@ -20,37 +20,41 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-24 px-4">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold pixel-text text-gradient mb-4">Professional Experience</h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            My journey in software development and key achievements
-          </p>
+    <section id="experience" className="section-padding">
+      <div className="container">
+        <div className="row">
+          <div className="col-12 text-center mb-5">
+            <h2 className="section-title pixel-text">Professional Experience</h2>
+            <p className="section-description">
+              My journey in software development and key achievements
+            </p>
+          </div>
         </div>
         
-        <div className="max-w-4xl mx-auto">
-          {experiences.map((exp, index) => (
-            <div key={index} className="pixel-card p-8">
-              <div className="mb-8">
-                <h3 className="text-2xl font-bold text-gradient mb-2">{exp.title}</h3>
-                <h4 className="text-xl text-gray-300 mb-2">{exp.company}</h4>
-                <span className="inline-block bg-primary/10 border border-primary px-4 py-2 text-sm pixel-text text-primary">{exp.period}</span>
+        <div className="row">
+          <div className="col-lg-8 mx-auto">
+            {experiences.map((exp, index) => (
+              <div key={index} className="experience-item pixel-card">
+                <div className="experience-header">
+                  <h3 className="experience-title text-gradient">{exp.title}</h3>
+                  <h4 className="experience-company">{exp.company}</h4>
+                  <span className="experience-period pixel-badge">{exp.period}</span>
+                </div>
+                
+                <div className="experience-content">
+                  <h5 className="achievements-title">Key Achievements:</h5>
+                  <ul className="achievements-list">
+                    {exp.achievements.map((achievement, achievementIndex) => (
+                      <li key={achievementIndex} className="achievement-item">
+                        <i className="fas fa-check-circle achievement-icon"></i>
+                        {achievement}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-              
-              <div>
-                <h5 className="text-xl font-semibold text-primary mb-6">Key Achievements:</h5>
-                <ul className="space-y-4">
-                  {exp.achievements.map((achievement, achievementIndex) => (
-                    <li key={achievementIndex} className="flex items-start gap-4">
-                      <i className="fas fa-check-circle text-accent mt-1 flex-shrink-0"></i>
-                      <span className="text-gray-300 leading-relaxed">{achievement}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

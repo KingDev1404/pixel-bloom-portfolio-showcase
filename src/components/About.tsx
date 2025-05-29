@@ -3,76 +3,84 @@ import React from 'react';
 
 const About = () => {
   return (
-    <section id="about" className="py-24 px-4 bg-dark-bg">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
-            <h2 className="text-4xl font-bold pixel-text text-gradient mb-8">About Me</h2>
-            
-            <div className="space-y-6 text-gray-300">
-              <p className="text-xl font-medium text-white leading-relaxed">
-                I'm a passionate Full Stack Developer with practical experience in designing 
-                and deploying scalable web applications.
-              </p>
-              <p className="leading-relaxed text-gray-300">
-                Currently pursuing B.Tech in Electronics and Telecommunication while 
-                expanding my expertise in DevOps practices. I love creating innovative 
-                solutions and bringing ideas to life through code.
-              </p>
-              <p className="leading-relaxed text-gray-300">
-                My journey in technology is driven by curiosity and a desire to build 
-                applications that make a difference. I'm always learning new technologies 
-                and best practices to deliver high-quality software solutions.
-              </p>
-            </div>
-            
-            <div className="flex gap-6 justify-center lg:justify-start mt-8">
-              <div className="text-center p-6 border-2 border-primary bg-black/30 backdrop-blur-sm flex-1 max-w-xs">
-                <h3 className="text-3xl font-bold text-gradient mb-2">15+</h3>
-                <p className="text-gray-400 text-sm uppercase tracking-wider">Technologies</p>
+    <section id="about" className="section-padding">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-6">
+            <div className="about-content">
+              <h2 className="section-title pixel-text">About Me</h2>
+              <div className="about-description">
+                <p className="lead mb-4">
+                  I'm a passionate Full Stack Developer with practical experience in designing 
+                  and deploying scalable web applications.
+                </p>
+                <p className="mb-4">
+                  Currently pursuing B.Tech in Electronics and Telecommunication while 
+                  expanding my expertise in DevOps practices. I love creating innovative 
+                  solutions and bringing ideas to life through code.
+                </p>
+                <p className="mb-4">
+                  My journey in technology is driven by curiosity and a desire to build 
+                  applications that make a difference. I'm always learning new technologies 
+                  and best practices to deliver high-quality software solutions.
+                </p>
               </div>
-              <div className="text-center p-6 border-2 border-primary bg-black/30 backdrop-blur-sm flex-1 max-w-xs">
-                <h3 className="text-3xl font-bold text-gradient mb-2">5+</h3>
-                <p className="text-gray-400 text-sm uppercase tracking-wider">Projects</p>
-              </div>
-            </div>
-
-            <div className="mt-12">
-              <h3 className="text-xl font-bold pixel-text mb-6 text-gradient">Education</h3>
-              <div className="space-y-4">
-                <div className="p-6 border-2 border-primary bg-black/30 backdrop-blur-sm">
-                  <h4 className="text-lg font-semibold text-gradient mb-2">Bachelor of Technology - 2026</h4>
-                  <p className="font-medium mb-1 text-white">Pimpri Chinchwad College Of Engineering</p>
-                  <p className="text-gray-400">Electronics And Telecommunication Engineering</p>
+              
+              <div className="about-stats row mt-5">
+                <div className="col-md-4 mb-3">
+                  <div className="stat-item pixel-card">
+                    <h3 className="stat-number text-gradient">2+</h3>
+                    <p className="stat-label">Years Experience</p>
+                  </div>
                 </div>
-                <div className="p-6 border-2 border-primary bg-black/30 backdrop-blur-sm">
-                  <h4 className="text-lg font-semibold text-gradient mb-2">Higher Secondary Certificate - 2022</h4>
-                  <p className="font-medium mb-1 text-white">Pratibha International School, Pune</p>
-                  <p className="text-gray-400">CBSE Board</p>
+                <div className="col-md-4 mb-3">
+                  <div className="stat-item pixel-card">
+                    <h3 className="stat-number text-gradient">15+</h3>
+                    <p className="stat-label">Technologies</p>
+                  </div>
+                </div>
+                <div className="col-md-4 mb-3">
+                  <div className="stat-item pixel-card">
+                    <h3 className="stat-number text-gradient">5+</h3>
+                    <p className="stat-label">Projects</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="education-section mt-5">
+                <h3 className="subsection-title">Education</h3>
+                <div className="education-item pixel-card mb-3">
+                  <h4 className="text-gradient">Bachelor of Technology - 2026</h4>
+                  <p className="mb-1"><strong>Pimpri Chinchwad College Of Engineering</strong></p>
+                  <p className="text-muted">Electronics And Telecommunication Engineering</p>
+                </div>
+                <div className="education-item pixel-card">
+                  <h4 className="text-gradient">Higher Secondary Certificate - 2022</h4>
+                  <p className="mb-1"><strong>Pratibha International School, Pune</strong></p>
+                  <p className="text-muted">CBSE Board</p>
                 </div>
               </div>
             </div>
           </div>
-          
-          <div className="flex items-center justify-center h-96">
-            <div className="relative w-80 h-80">
-              <div className="absolute inset-0 border-2 border-primary bg-black/30 backdrop-blur-sm flex items-center justify-center">
-                <div className="font-mono text-sm space-y-2 text-white">
-                  <div className="opacity-0 animate-[typewriter_1s_ease-out_forwards]" style={{animationDelay: '0s'}}>
-                    <span className="text-red-400">const</span>{' '}
-                    <span className="text-cyan-400">developer</span>{' '}
-                    <span className="text-yellow-400">=</span>{' '}
-                    <span className="text-green-400">'Soham'</span>;
+          <div className="col-lg-6">
+            <div className="about-visual">
+              <div className="pixel-portrait">
+                <div className="code-animation">
+                  <div className="code-line" style={{animationDelay: '0s'}}>
+                    <span className="code-keyword">const</span> 
+                    <span className="code-variable"> developer</span> 
+                    <span className="code-operator"> = </span>
+                    <span className="code-string">'Soham'</span>;
                   </div>
-                  <div className="opacity-0 animate-[typewriter_1s_ease-out_forwards]" style={{animationDelay: '0.5s'}}>
-                    <span className="text-red-400">function</span>{' '}
-                    <span className="text-blue-400">createAwesome</span>() {'{'}
+                  <div className="code-line" style={{animationDelay: '0.5s'}}>
+                    <span className="code-keyword">function</span> 
+                    <span className="code-function"> createAwesome</span>() {'{'}
                   </div>
-                  <div className="opacity-0 animate-[typewriter_1s_ease-out_forwards]" style={{animationDelay: '1s'}}>
-                    &nbsp;&nbsp;<span className="text-red-400">return</span>{' '}
-                    <span className="text-green-400">'Amazing Projects'</span>;
+                  <div className="code-line" style={{animationDelay: '1s'}}>
+                    &nbsp;&nbsp;<span className="code-keyword">return</span> 
+                    <span className="code-string"> 'Amazing Projects'</span>;
                   </div>
-                  <div className="opacity-0 animate-[typewriter_1s_ease-out_forwards]" style={{animationDelay: '1.5s'}}>{'}'}</div>
+                  <div className="code-line" style={{animationDelay: '1.5s'}}>{'}'}</div>
                 </div>
               </div>
             </div>
