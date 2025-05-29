@@ -5,7 +5,7 @@ const PixelArt = () => {
   return (
     <div className="relative w-full max-w-md mx-auto">
       {/* Main Character */}
-      <div className="pixel-character-container">
+      <div className="pixel-character-container animate-float">
         <div className="grid grid-cols-8 gap-1 w-64 h-64 mx-auto">
           {/* Creating a simple pixel character */}
           {Array.from({ length: 64 }, (_, i) => {
@@ -14,6 +14,7 @@ const PixelArt = () => {
             
             // Define the pixel character pattern
             let pixelClass = 'bg-transparent';
+            let isEye = false;
             
             // Head outline
             if ((row === 1 && col >= 2 && col <= 5) ||
@@ -23,9 +24,10 @@ const PixelArt = () => {
               pixelClass = 'bg-yellow-400';
             }
             
-            // Eyes
+            // Eyes with blinking animation
             if ((row === 2 && col === 3) || (row === 2 && col === 4)) {
-              pixelClass = 'bg-black';
+              pixelClass = 'bg-black animate-blink';
+              isEye = true;
             }
             
             // Body
@@ -38,10 +40,11 @@ const PixelArt = () => {
             return (
               <div
                 key={i}
-                className={`w-6 h-6 ${pixelClass} transition-all duration-300 hover:scale-110`}
+                className={`w-6 h-6 ${pixelClass} transition-all duration-300 hover:scale-110 ${isEye ? 'animate-blink' : ''}`}
                 style={{
                   imageRendering: 'pixelated',
-                  border: pixelClass !== 'bg-transparent' ? '1px solid rgba(0,0,0,0.2)' : 'none'
+                  border: pixelClass !== 'bg-transparent' ? '1px solid rgba(0,0,0,0.2)' : 'none',
+                  animationDelay: isEye ? `${Math.random() * 3}s` : '0s'
                 }}
               />
             );
