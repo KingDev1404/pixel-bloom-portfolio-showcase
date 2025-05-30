@@ -1,11 +1,41 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const PixelArt = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  const getEyeDirection = (eyeX: number, eyeY: number) => {
+    const rect = document.querySelector('.pixel-character-container')?.getBoundingClientRect();
+    if (!rect) return { x: 0, y: 0 };
+    
+    const eyeCenterX = rect.left + eyeX;
+    const eyeCenterY = rect.top + eyeY;
+    
+    const deltaX = mousePosition.x - eyeCenterX;
+    const deltaY = mousePosition.y - eyeCenterY;
+    
+    const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+    const maxDistance = 3; // Maximum eye movement
+    
+    return {
+      x: Math.max(-maxDistance, Math.min(maxDistance, deltaX / 20)),
+      y: Math.max(-maxDistance, Math.min(maxDistance, deltaY / 20))
+    };
+  };
+
   return (
     <div className="relative w-full max-w-md mx-auto">
       {/* Main Character */}
-      <div className="pixel-character-container animate-float">
+      <div className="pixel-character-container">
         <div className="grid grid-cols-8 gap-1 w-64 h-64 mx-auto">
           {/* Creating a simple pixel character */}
           {Array.from({ length: 64 }, (_, i) => {
@@ -15,6 +45,8 @@ const PixelArt = () => {
             // Define the pixel character pattern
             let pixelClass = 'bg-transparent';
             let isEye = false;
+            let isLeftEye = false;
+            let isRightEye = false;
             
             // Head outline
             if ((row === 1 && col >= 2 && col <= 5) ||
@@ -24,10 +56,16 @@ const PixelArt = () => {
               pixelClass = 'bg-yellow-400';
             }
             
-            // Eyes with blinking animation
-            if ((row === 2 && col === 3) || (row === 2 && col === 4)) {
-              pixelClass = 'bg-black animate-blink';
+            // Eyes with tracking
+            if (row === 2 && col === 3) {
+              pixelClass = 'bg-black eyes-blink';
               isEye = true;
+              isLeftEye = true;
+            }
+            if (row === 2 && col === 4) {
+              pixelClass = 'bg-black eyes-blink';
+              isEye = true;
+              isRightEye = true;
             }
             
             // Body
@@ -36,15 +74,22 @@ const PixelArt = () => {
                 (row === 7 && col >= 2 && col <= 5)) {
               pixelClass = 'bg-blue-500';
             }
+
+            const leftEyeDirection = getEyeDirection(col * 25 + 12, row * 25 + 12);
+            const rightEyeDirection = getEyeDirection(col * 25 + 12, row * 25 + 12);
             
             return (
               <div
                 key={i}
-                className={`w-6 h-6 ${pixelClass} transition-all duration-300 hover:scale-110 ${isEye ? 'animate-blink' : ''}`}
+                className={`w-6 h-6 ${pixelClass} transition-all duration-300 hover:scale-110`}
                 style={{
                   imageRendering: 'pixelated',
                   border: pixelClass !== 'bg-transparent' ? '1px solid rgba(0,0,0,0.2)' : 'none',
-                  animationDelay: isEye ? `${Math.random() * 3}s` : '0s'
+                  transform: isLeftEye 
+                    ? `translate(${leftEyeDirection.x}px, ${leftEyeDirection.y}px)` 
+                    : isRightEye 
+                    ? `translate(${rightEyeDirection.x}px, ${rightEyeDirection.y}px)` 
+                    : 'none'
                 }}
               />
             );

@@ -890,6 +890,133 @@ html {
 
 /* Enhanced Animations */
 .animate-float {
+  /* Removed float animation */
+}
+
+.eyes-blink {
+  animation: eyesBlink 4s ease-in-out infinite;
+}
+
+/* Modern Skills Section */
+.modern-skill-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 16px;
+  padding: 24px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.modern-skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modern-skill-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary-color);
+  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15);
+}
+
+.modern-skill-card:hover::before {
+  opacity: 1;
+}
+
+.skill-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skill-icon {
+  font-size: 2rem;
+  filter: drop-shadow(0 0 10px rgba(99, 102, 241, 0.5));
+}
+
+.skill-category-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--light-text);
+  margin: 0;
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modern-skill-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.modern-skill-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateX(4px);
+}
+
+.skill-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.skill-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.skill-name {
+  font-weight: 500;
+  color: var(--light-text);
+  font-size: 0.95rem;
+}
+
+.skill-badge {
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+}
+
+/* Eye blinking animation - both eyes together */
+@keyframes eyesBlink {
+  0%, 85%, 100% { 
+    opacity: 1; 
+    transform: scaleY(1);
+  }
+  90%, 95% { 
+    opacity: 0.2; 
+    transform: scaleY(0.1);
+  }
+}
+
+/* Enhanced Animations */
+.animate-float {
   animation: float 6s ease-in-out infinite;
 }
 
